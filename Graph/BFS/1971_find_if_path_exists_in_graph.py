@@ -35,7 +35,7 @@
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         if source == destination:
-            return True
+            return True 
         
         adj = [[] for _ in range(n)]
         for i , j in edges:
