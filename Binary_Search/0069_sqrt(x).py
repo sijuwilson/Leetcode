@@ -20,6 +20,7 @@
     Constraints:
 
     0 <= x <= 231 - 1.
+
 """
 
 class Solution:
@@ -35,4 +36,3 @@ class Solution:
             else:
                 l = mid + 1
         return r
-            

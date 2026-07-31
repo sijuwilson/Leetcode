@@ -1,26 +1,27 @@
-**Level:** Easy
-**Problem:**
-Given an integer x, return true if x is a palindrome, and false otherwise.
+"""
+    Level: Easy
+    Problem:
+    Given an integer x, return true if x is a palindrome, and false otherwise.
 
-**Example 1:**
+    Example 1:
 
-Input: x = 121
-Output: true
-Explanation: 121 reads as 121 from left to right and from right to left.
+    Input: x = 121
+    Output: true
+    Explanation: 121 reads as 121 from left to right and from right to left.
 
-**Example 2:**
+    Example 2:
 
-Input: x = -121
-Output: false
-Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+    Input: x = -121
+    Output: false
+    Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
 
-**Constraints:**
+    Constraints:
 
--231 <= x <= 231 - 1.
+    -2**31 <= x <= 2**31 - 1.
 
-**Solution:(python3)**
+"""
 
-    class Solution:
-        def isPalindrome(self, x: int) -> bool:
-            s=str(x)
-            return s == s[::-1]
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        s=str(x)
+        return s == s[::-1]

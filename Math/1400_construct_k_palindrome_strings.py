@@ -1,39 +1,40 @@
-**Level:** Medium
-**Problem:**
-Given a string s and an integer k, return true if you can use all the characters in s to construct non-empty k palindrome strings or false otherwise.
+"""
+    Level: Medium
+    Problem:
+    Given a string s and an integer k, return true if you can use all the characters in s to construct non-empty k palindrome strings or false otherwise.
 
-**Example 1:**
+    Example 1:
 
-Input: s = "annabelle", k = 2
-Output: true
-Explanation: You can construct two palindromes using all characters in s.
-Some possible constructions "anna" + "elble", "anbna" + "elle", "anellena" + "b"
+    Input: s = "annabelle", k = 2
+    Output: true
+    Explanation: You can construct two palindromes using all characters in s.
+    Some possible constructions "anna" + "elble", "anbna" + "elle", "anellena" + "b"
 
-**Example 2:**
+    Example 2:
 
-Input: s = "leetcode", k = 3
-Output: false
-Explanation: It is impossible to construct 3 palindromes using all the characters of s.
+    Input: s = "leetcode", k = 3
+    Output: false
+    Explanation: It is impossible to construct 3 palindromes using all the characters of s.
 
-**Constraints:**
+    Constraints:
 
-1 <= s.length <= 105, 
-s consists of lowercase English letters.
-1 <= k <= 105.
+    1 <= s.length <= 105, 
+    s consists of lowercase English letters.
+    1 <= k <= 105.
 
-**Solution:(python3)**
+"""
 
-    from collections import Counter
-    class Solution:
-        def canConstruct(self, s: str, k: int) -> bool:
-            n = len(s)
-            if n == k: return True
-            if n < k: return False
-            freq = Counter(s)
-            c = 0
-            for k , v in freq.items():
-                if v % 2 != 0:
-                    c+=1
-            if c <= k :
-                return True
-            return False
+from collections import Counter
+class Solution:
+    def canConstruct(self, s: str, k: int) -> bool:
+        n = len(s)
+        if n == k: return True
+        if n < k: return False
+        freq = Counter(s)
+        c = 0
+        for _, v in freq.items():
+            if v % 2 != 0:
+                c += 1
+        if c <= k:
+            return True
+        return False

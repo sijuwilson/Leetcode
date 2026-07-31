@@ -1,41 +1,38 @@
-**Level:** Medium
-**Problem:**
-Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
+"""
+    Level: Medium
+    Problem:
+    Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
+    We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
+    You must solve this problem without using the library's sort function.
 
-We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
+    Example 1:
 
-You must solve this problem without using the library's sort function.
+    Input: nums = [2,0,2,1,1,0]
+    Output: [0,0,1,1,2,2]
 
-**Example 1:**
+    Example 2:
 
-Input: nums = [2,0,2,1,1,0]
-Output: [0,0,1,1,2,2]
+    Input: nums = [2,0,1]
+    Output: [0,1,2]
 
-**Example 2:**
+    Constraints:
 
-Input: nums = [2,0,1]
-Output: [0,1,2]
+    n == nums.length,
+    1 <= n <= 300,
+    nums[i] is either 0, 1, or 2.
 
-**Constraints:**
+"""
 
-n == nums.length,
-1 <= n <= 300,
-nums[i] is either 0, 1, or 2.
-
-**Solution:(python3)**
-
-    class Solution:
-        def sortColors(self, nums: List[int]) -> None:
-            """
-            Do not return anything, modify nums in-place instead.
-            """
-            n = len(nums)
-            for i in range(n):
-                f = False
-                for j in range(n-i-1):
-                    if nums[j] > nums[j+1]:
-                        f = True
-                        nums[j],nums[j+1] = nums[j+1],nums[j]
-                if not f: break
-
-                
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        n = len(nums)
+        for i in range(n):
+            f = False
+            for j in range(n-i-1):
+                if nums[j] > nums[j+1]:
+                    f = True
+                    nums[j],nums[j+1] = nums[j+1],nums[j]
+            if not f: break

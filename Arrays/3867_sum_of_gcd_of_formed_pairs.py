@@ -52,8 +52,6 @@
 
 """
 
-from math import gcd
-
 class Solution:
     def gcdSum(self, nums: list[int]) -> int:
         n = len(nums)
